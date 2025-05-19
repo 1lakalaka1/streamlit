@@ -18,7 +18,7 @@ groups = ["BTS", "EXO", "TWICE", "SEVENTEEN", "BLACKPINK", "Red Velvet", "NCT 12
 debut_years = [2013, 2012, 2015, 2015, 2016, 2014, 2016, 2014, 2014, 2018]
 
 # 데뷔 연도를 2010~2019 범위로 조정 (단순히 예시를 위한 조정)
-adjusted_debut_years = [year if 2010 <= year <= 2019 else random.randint(2010, 2019) for year in debut_years]
+adjusted_debut_years = [year if 2010 <= year <= 2018 else random.randint(2010, 2018) for year in debut_years]
 
 # 데이터프레임 생성
 data = {
@@ -45,9 +45,9 @@ with col1:
     st.subheader("📅 Debut Years")
     st.dataframe(df)
 with col2:
-    st.subheader("📈 Debut Year Trend (2010-2019)")
+    st.subheader("📈 Debut Year Trend (2010-2018)")
     # 꺾은선 그래프 표시
-    debut_years_range = range(2010, 2020)
+    debut_years_range = range(2010, 2019)
     debut_counts_dict = {year: 0 for year in debut_years_range}
     for year, count in zip(debut_year_counts["Debut Year"], debut_year_counts["Number of Groups"]):
         if year in debut_counts_dict:
